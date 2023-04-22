@@ -1,0 +1,1 @@
+This app helps you decide what movie to whatch based on five random questions. Your answers are then used to query different movies from xyxy movie database.

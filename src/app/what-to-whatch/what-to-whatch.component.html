@@ -1,0 +1,6 @@
+<form>
+    <h3>{{currentQuestion.text}}</h3>
+    <div *ngFor="let option of currentQuestion.options">
+        <button id={{option.id}} (click)="sendAnswer(option.id)">{{option.text}}{{option.id}} </button>
+    </div>
+</form>
