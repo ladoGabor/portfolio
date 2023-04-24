@@ -1,6 +1,12 @@
-<form>
-    <h3>{{currentQuestion.text}}</h3>
-    <div *ngFor="let option of currentQuestion.options">
-        <button id={{option.id}} (click)="sendAnswer(option.id)">{{option.text}}{{option.id}} </button>
+<!-- This ngIf will assure that currentQuestion is only used after it is created
+    to avoid typeError -->
+<form class="container" *ngIf="currentQuestion">
+
+    <h3>{{currentQuestion.question}}</h3>
+    <div *ngFor="let answer of currentQuestion.answers">
+        <button class="btn btn-primary btn-lg col-8 m-2" 
+                id={{answer.id}} (click)="sendAnswer(answer.id)">{{answer.text}}</button>
     </div>
 </form>
+<hr>
+<button (click)="logger()">Console.log</button>
