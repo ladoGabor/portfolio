@@ -11,7 +11,7 @@ import { Observable } from 'rxjs';
 })
 export class GetQuestionsService {
 
-  private jsonURL = '../assets/questions.json';
+  private jsonURL = '../assets/db-temporary/five_questions.json';
   constructor(private http: HttpClient) {}
 
   getQuestions(): Observable<any> {
