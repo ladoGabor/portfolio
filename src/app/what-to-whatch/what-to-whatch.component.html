@@ -1,11 +1,16 @@
 <!-- This ngIf will assure that currentQuestion is only used after it is created
     to avoid typeError -->
-<form class="container" *ngIf="currentQuestion">
-
-    <h3>{{currentQuestion.question}}</h3>
-    <div *ngFor="let answer of currentQuestion.answers">
-        <button class="btn btn-primary btn-lg col-8 m-2" 
-                id={{answer.id}} (click)="sendAnswer(answer.id)">{{answer.text}}</button>
+<form class="container mt-5 col-6" *ngIf="currentQuestion">
+    <div class="card text-center">
+        <div class="card-header text-muted"></div>
+        <div class="card-body">
+            <h3 class="card-title">{{currentQuestion.question}}</h3>
+            <div *ngFor="let answer of currentQuestion.answers">
+                <button class="btn btn-primary btn-lg col-8 m-2" 
+                        id={{answer.id}} (click)="sendAnswer(answer.id)">{{answer.text}}</button>
+            </div>
+        </div>
+        <div class="card-footer text-muted"></div>
     </div>
 </form>
 <hr>
